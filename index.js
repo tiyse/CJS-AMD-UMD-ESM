@@ -42,6 +42,23 @@ define(function (require) {
     return Requester;
 }));
 
+// SJS - SystemJS
+// ---------------------------------------------------------------
+// exporting or defining
+var myUtilsModule = function (n) {
+  var myMethod = function(){
+    // your module's code
+  }
+
+  return {
+    myMethod: myMethod
+  }
+}()
+
+System.import('path/to/main.js').then(function(){
+  myMethod();
+})
+
 // IIFE - Immediately Invoked Function Expression
 // ---------------------------------------------------------------
 import React from 'react';
